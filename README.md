@@ -10,3 +10,5 @@ Nadia & Monika: HTML and CSS
 Warren & Peter: Javascript/jQuery & APIs
 
 Site Wireframe: https://imgur.com/a/5yuLmkO
+
+API's: Google Places, Yelp, and Open Weather Map
