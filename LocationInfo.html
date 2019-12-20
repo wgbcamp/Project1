@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>My Geocode App</title>
+  </head>
+  <body>
+      <div class="container">
+    <div id="formatted-address"></div>
+    <div id="address-components"></div>
+    <div id="latnlongdiv"></div>
+
+​       </div>
+    <script>
+
+        // call geocode function
+
+        geocode();
+
+        function geocode(){
+            var location = 'bowie high school, md';
+            axios.get('https://maps.googleapis.com/maps/api/geocode/json?', {
+               params:{
+                   address: location,
+                   key: 'AIzaSyCvOKLVaSdKCVrhQ882rjfMcZ7gQpCNk_4'
+               } 
+            })
+            .then(function(response){
+                //log full response
+                console.log(response);
+
+                //formatted address
+                var formattedAddress = (response.data.results[0].formatted_address);
+                var formattedAddressOutput = `
+                    <ul class="list-group">
+                        <li class="list-group-item">${formattedAddress}</li>
+                    </ul>
+                `;
+
+                //address components
+                var addressComponents = response.data.results[0].address_components;
+                var addressComponentsOutput = '<ul class="list-group">';
+                for(var i = 0; i < addressComponents.length; i++){
+                    addressComponentsOutput += `
+                        <li class="list-group-item"><strong>${addressComponents[i].types[0]
+                        }</strong>: ${addressComponents[i].long_name}</li>
+                    `;
+                }
+                addressComponentsOutput += '</ul>';
+
+
+                // Latitude and logitude coordinates 
+                var latitude = (response.data.results[0].geometry.location.lat);
+                var longitude = (response.data.results[0].geometry.location.lng);
+                var latnlongOutput = `
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Latitude</strong>:${latitude}</li>
+                        <li class="list-group-item"><strong>Longitude</strong>:${longitude}</li>
+                    </ul>
+                `;
+
+                //Output to app
+                document.getElementById('formatted-address').innerHTML = formattedAddressOutput;
+                document.getElementById('address-components').innerHTML = addressComponentsOutput;
+                document.getElementById('latnlongdiv').innerHTML = latnlongOutput;
+                
+            })
+            .catch(function(error){
+                console.log(error)
+            });
+        }
+    </script>
+   
+  </body>
+
+
+</html>
