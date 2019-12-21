@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NewYorkCity</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="masthead"><h1 class="display-4">Welcome to New York City</h1></div>
+
+    <h2><a class="weatherwidget-io" id="waetherWidget" href="https://forecast7.com/en/40d71n74d01/boston/" data-label_1="NEW YORK" data-label_2="WEATHER" data-theme="original" >NEW YORK WEATHER</a>
+        <script>
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+        </script></h2>
+
+
+<div id="mainBackground">  
+    <img id="backImg" src="./assets/images/2N8Zebr.jpg"  alt="Responsive image">
+
+    <div id="userInput" class="middlePage">
+            <p class="lead2">Find your way?</p>
+            <hr class="my-4">
+            <div class="input-group mb-3" id="searchAndButton">
+                <input type="text" id = "autocomplete" class="form-control" placeholder="New York City places" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+                </div>
+                
+            </div>
+          </div>
+      </div>
+    </div>
+
+</body>
+</html>
