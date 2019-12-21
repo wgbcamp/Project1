@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>My Geocode App</title>
+
+    <style>
+
+        .centering{
+            padding-top: 2%;
+            padding-left: 2%;
+            padding-right: 2%;
+        }
+
+        #map{
+            height:800px;
+            width:100%;
+            border-radius: 5px;
+        }
+
+
+    </style>
+
+  </head>
+  <body>
+      <div class="centering">
+      <div class="row">
+          <div class= "col-4">
+              <div class="form-group">
+
+    <input type="text" class="form-control" id="userInput" placeholder="Enter location" onsubmit="geocode()">
+    <form onsubmit="geocode()">
+  
+    <button type="submit" class="btn btn-secondary" value="Submit">Submit</button>
+    </form>
+        </div>
+    <br>
+    
+    <div id="formatted-address"></div>
+    <div id="address-components"></div>
+    <div id="latnlongdiv"></div>
+        </div>
+        <div class= "col-8">
+​       
+
+    <div id="map"></div>
+</div>
+</div>
+</div>
+    <script>
+
+
+
+        document.addEventListener("keyup", function(event){
+            if(event.key == "Enter"){
+                geocode();
+            }
+        });
+
+        var longitude;
+        var latitude;
+        // call geocode function
+
+     
+
+        function geocode(){
+            event.preventDefault();
+            userInput.add
+            var location = document.getElementById('userInput').value;
+            axios.get('https://maps.googleapis.com/maps/api/geocode/json?', {
+               params:{
+                   address: location,
+                   key: 'AIzaSyDrsiWLqfpO7oUt22eiHq8O1ul8jVpt96Y'
+               } 
+            })
+            .then(function(response){
+                //log full response
+                console.log(response);
+
+                //formatted address
+                var formattedAddress = (response.data.results[0].formatted_address);
+                var formattedAddressOutput = `
+                    <ul class="list-group">
+                        <li class="list-group-item">${formattedAddress}</li>
+                    </ul>
+                `;
+
+                //address components
+                var addressComponents = response.data.results[0].address_components;
+                var addressComponentsOutput = '<ul class="list-group">';
+                for(var i = 0; i < addressComponents.length; i++){
+                    addressComponentsOutput += `
+                        <li class="list-group-item"><strong>${addressComponents[i].types[0]
+                        }</strong>: ${addressComponents[i].long_name}</li>
+                    `;
+                }
+                addressComponentsOutput += '</ul>';
+
+
+                // Latitude and logitude coordinates 
+                 latitude = (response.data.results[0].geometry.location.lat);
+                 longitude = (response.data.results[0].geometry.location.lng);
+                var latnlongOutput = `
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Latitude</strong>:${latitude}</li>
+                        <li class="list-group-item"><strong>Longitude</strong>:${longitude}</li>
+                    </ul>
+                `;
+
+                //Output to app
+                document.getElementById('formatted-address').innerHTML = formattedAddressOutput;
+                document.getElementById('address-components').innerHTML = addressComponentsOutput;
+                document.getElementById('latnlongdiv').innerHTML = latnlongOutput;
+
+               initMap(); 
+            })
+            .catch(function(error){
+                console.log(error)
+            });
+            
+            
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+    <script>
+    function initMap(){
+
+//Map options
+var options = {
+    zoom:18,
+    center: {lat: latitude, lng: longitude}
+}
+
+//New map
+var map = new google.maps.Map(document.getElementById('map'), options);
+
+//Add marker
+var marker = new google.maps.Marker({
+    position:{lat: latitude, lng: longitude},
+    map:map
+    
+
+});
+
+}
+    </script>
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrsiWLqfpO7oUt22eiHq8O1ul8jVpt96Y&callback=initMap">
+</script>
+   
+  </body>
+
+
+</html>
