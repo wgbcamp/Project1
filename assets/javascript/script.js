@@ -11,22 +11,20 @@ function getWeather() {
      });
 }
 
-// Jquery method document ready function
-$(document).ready(function(){
-    $("#searchAndButton").click(function () {
-
-        var input = document.getElementById('autocomplete');
-      var autocomplete = new google.maps.places.Autocomplete(input,{types: ['(cities)']});
-      google.maps.event.addListener(autocomplete, 'place_changed', function(){
-         var place = autocomplete.getPlace();
-      })
-
-      
-
-
-
-
-    })
-
-});
+var map;
+         function initialize() {
+           var prop = {
+            center:new google.maps.LatLng(40.558896,-73.985130),
+            zoom:5,
+            mapTypeId:google.maps.MapTypeId.ROADMAP
+           };
+          return new google.maps.Map(document.getElementById("w3docs-map"), prop);
+         }
+         setTimeout(function(){
+            map = initialize();
+         },500);
+         function w3Load(){
+            document.getElementById("w3docs-map").style.display = 'block';
+            google.maps.event.trigger(map, 'resize');
+         }
    

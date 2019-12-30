@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=API_KEY&libraries=places"></script>>
-
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCzzHkOpcnetRpLwcmfmDHrHK1yHiHJqY"></script>
 </head>
 <body>
     <div class="masthead"><h1 class="display-4">Welcome to New York City</h1></div>
@@ -24,14 +23,18 @@
     <img id="backImg" src="./assets/images/2N8Zebr.jpg"  alt="Responsive image">
 
     <div id="userInput" class="middlePage">
-            <p class="lead2">Find your way?</p>
+            <p class="lead2">MapMate</p>
+            <p class="lead3"><i>"A Map designed With You in Mind"</i> </p>
+            
             <hr class="my-4">
             <div class="input-group mb-3" id="searchAndButton">
                 <input type="text" id = "autocomplete" class="form-control" placeholder="New York City places" aria-label="Recipient's username" aria-describedby="button-addon2">
                 <div class="input-group-append">
+                    
                   <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
                 </div>
-                
+                <div id="w3docs-map" style="width:500px;height:380px;display: none"></div>
+                    <button onclick="w3Load()">MapMate</button> 
             </div>
           </div>
       </div>
@@ -39,3 +42,4 @@
 
 </body>
 </html>
+
