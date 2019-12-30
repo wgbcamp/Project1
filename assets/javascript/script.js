@@ -10,3 +10,23 @@ function getWeather() {
     }).then(function (res) { console.log(res);
      });
 }
+
+// Jquery method document ready function
+$(document).ready(function(){
+    $("#searchAndButton").click(function () {
+
+        var input = document.getElementById('autocomplete');
+      var autocomplete = new google.maps.places.Autocomplete(input,{types: ['(cities)']});
+      google.maps.event.addListener(autocomplete, 'place_changed', function(){
+         var place = autocomplete.getPlace();
+      })
+
+      
+
+
+
+
+    })
+
+});
+   
