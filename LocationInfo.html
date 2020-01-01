@@ -22,7 +22,11 @@
             border-radius: 5px;
         }
 
-
+        #weatherBox{
+            width:50%;
+            height:300px;
+            background-color: lightgray;
+        }
     </style>
 
   </head>
@@ -43,6 +47,7 @@
     <div id="formatted-address"></div>
     <div id="address-components"></div>
     <div id="latnlongdiv"></div>
+    <div id="weatherBox"></div>
         </div>
         <div class= "col-8">
 ​       
@@ -117,6 +122,7 @@
                 document.getElementById('latnlongdiv').innerHTML = latnlongOutput;
 
                initMap(); 
+
             })
             .catch(function(error){
                 console.log(error)
@@ -124,7 +130,6 @@
             
             
         }
-    </script>
 
 
 
@@ -134,7 +139,8 @@
 
 
 
-    <script>
+    
+//initialize map........................................
     function initMap(){
 
 //Map options
@@ -155,12 +161,25 @@ var marker = new google.maps.Marker({
 });
 
 }
+
+
+function checkWeather(){
+          $.ajax({
+            url: "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/1533a6abd1f19bd562bf71f7578ad7cf/42.3601,-71.0589",
+            method: "GET"    
+          }).then(function(response){
+              console.log(response);
+              var formattedCurrentTemperature = (response.currently.apparentTemperature);
+              document.getElementById('weatherBox').innerHTML = formattedCurrentTemperature;
+          });
+        }
     </script>
+    
 
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8cGRM9oWdrjHzKlClHtWUBkYaaZ1dCFM&callback=initMap">
 </script>
-   
+
   </body>
 
 
