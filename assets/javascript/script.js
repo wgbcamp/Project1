@@ -18,7 +18,9 @@
 var longitude;
 var latitude;
 var placeSentToGeocode;
-var apikey = "YOUR API KEY GOES HERE";
+var apikey = "YOUR_API_KEY";
+
+
 //hitting enter invokes geocode function
 document.addEventListener("keyup", function(event){
     if(event.key == "Enter"){
