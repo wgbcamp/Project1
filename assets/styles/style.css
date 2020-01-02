@@ -1,0 +1,52 @@
+
+
+#mainBackground {
+    position: relative;
+    background-image: url('../images/2N8Zebr.jpg');
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+#userInput {
+  
+}
+
+
+
+.lead2 {
+     font-size: 30px; 
+    text-align: center;
+    font-style: italic;
+      
+}
+
+#backImg{
+    /* margin-top: 0; */
+      height: 600px;
+      width: 100%;
+  }
+
+
+.masthead {
+    text-align: center;
+    position: relative;
+    z-index: 300;
+    background: #fff;
+}
+
+.row{
+    height: 400px;
+}
+
+#map{
+    
+    height:500px;
+    
+    border-radius: 5px;
+}
+
+
+#waetherWidget{
+  
+}
