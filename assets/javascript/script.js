@@ -17,11 +17,11 @@
 var longitudeValue;
 var latitudeValue;
 var placeSentToGeocode;
-var apikey = "YOUR_API_KEY";
+var apikey = "AIzaSyB8cGRM9oWdrjHzKlClHtWUBkYaaZ1dCFM";
 
 
 
-//**autocomplete function starts after user types text into search bar**
+//**autocomplete function starts after user types text into input field**
 google.maps.event.addDomListener(window, 'load', initialize);
 
 function initialize() {
