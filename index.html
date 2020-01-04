@@ -7,8 +7,9 @@
     <title>NewYorkCity</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCzzHkOpcnetRpLwcmfmDHrHK1yHiHJqY"></script>
+    
+    
+
 </head>
 <body>
     <div class="masthead"><h1 class="display-4">Welcome to New York City</h1></div>
@@ -20,26 +21,40 @@
 
 
 <div id="mainBackground">  
-    <img id="backImg" src="./assets/images/2N8Zebr.jpg"  alt="Responsive image">
+    
 
-    <div id="userInput" class="middlePage">
-            <p class="lead2">MapMate</p>
-            <p class="lead3"><i>"A Map designed With You in Mind"</i> </p>
-            
-            <hr class="my-4">
-            <div class="input-group mb-3" id="searchAndButton">
-                <input type="text" id = "autocomplete" class="form-control" placeholder="New York City places" aria-label="Recipient's username" aria-describedby="button-addon2">
-                <div class="input-group-append">
-                    
-                  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
-                </div>
-                <div id="w3docs-map" style="width:500px;height:380px;display: none"></div>
-                    <button onclick="w3Load()">MapMate</button> 
-            </div>
-          </div>
-      </div>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+            <div class="lead2">Find Your Way</div>
+            <input id="userInput" class="form-control" type="text" placeholder="Enter a location">
+        </div>
     </div>
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-4">
+                <div id="mapTitle"></div>
+                <div id="map"></div> 
+            </div>
+            <div class="col-4">
+                <div id="restaurantTitle"></div>
+                <div id="restaurantPoints"></div>
+            </div>
+
+            </div>
+        
+            
+        
+    </div>
+</div>
+
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8cGRM9oWdrjHzKlClHtWUBkYaaZ1dCFM&libraries=places&sensor=false"></script>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="assets/javascript/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 </body>
 </html>
-
