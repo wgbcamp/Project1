@@ -13,15 +13,16 @@
 
 
 
-//latitude and longitude values will be held here
 var longitudeValue;
 var latitudeValue;
 var placeSentToGeocode;
-var apikey = "YOUR_API_KEY";
+var apikey = "YOUR API KEY";
+var restaurants;
+var place_idVariable;
+var restaurantsOutput = '<ul class="list-group">';
+var photo;
 
-
-
-//**autocomplete function starts after user types text into search bar**
+//**autocomplete function starts after user types text into input field**
 google.maps.event.addDomListener(window, 'load', initialize);
 
 function initialize() {
@@ -63,7 +64,6 @@ function geocode(){
        key: apikey
     }
    })
-
     .then(function(response){
         //log full response
         console.log(response);
@@ -78,9 +78,7 @@ function geocode(){
     })
     .catch(function(error){
         console.log(error)
-    });
-    
-    
+    }); 
 }
 
 //**Hitting enter invokes geocode function, searching for address that best matches user input**
@@ -152,7 +150,9 @@ console.log("Map and marker displayed.")
 
 //**restaurantFinder finds the place ID of restaurants within 1 mile of user's coordinates**  
 function restaurantFinder(){
-
+    //refresh the restaurantPoints div in html file
+    restaurantsOutput = "";
+    document.getElementById('restaurantPoints').innerHTML = restaurantsOutput; 
     console.log("restaurantFinder function called...")
 
     var stringifiedPosition = String(latitudeValue) + "," + String(longitudeValue);
@@ -163,7 +163,7 @@ function restaurantFinder(){
         data: {
             location: stringifiedPosition,
             radius: '1609.34',
-            type: 'restaurant',
+            type: 'restaurant', 
             key: apikey
         
         }
@@ -175,42 +175,72 @@ function restaurantFinder(){
         console.log(response);
 
        
-        var restaurantsOutput = '<ul class="list-group">';
+        
 
         for (i=0; i < 12; i++){
-            var restaurants = response.results[i].name;
-           restaurantsOutput+= 
-                `<li class="list-group-item">${restaurants}</li>`
-           ;
-        }
-        
-        document.getElementById('restaurantTitle').innerHTML = "Restaurants";
-        document.getElementById('restaurantPoints').innerHTML = restaurantsOutput; 
-
+           
+           place_idVariable = response.results[i].place_id;
+           
+           restaurantData();
+        } 
     })
     .catch(function(error){
         console.log(error)
+        
     });
+
+    
 }
 
 
+//**restaurantData is called at the end of restaurantFinder, providing more info about each restaurant **/
+function restaurantData(){
 
-// function restaurantData(){
+    console.log("restaurantData function called...")
+    
 
-//     console.log("restaurantData function called...")
 
-//     $.ajax({
-//         url: '',
+        $.ajax({
+            url: 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?',
+    
+            data: {
+                key: apikey,
+                place_id: place_idVariable,
+            }
+        })
+        .then(function(response){
+            console.log(response);
+            restaurants = response.result.name;
+            photo = response.result.photos[0].photo_reference;
+            restaurantsOutput+= 
+                `<li class="list-group-item">${restaurants}</li>`;
 
-//         data: {
+                document.getElementById('restaurantTitle').innerHTML = "Restaurants";
+                document.getElementById('restaurantPoints').innerHTML = restaurantsOutput; 
+                // restaurantPhoto();
+        })
+}
+
+// function restaurantPhoto(){
+
+//     console.log("restaurantPhoto funcation called...")
+
+    
+//         $.ajax({
+//             url: 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/photo?',
+//             data: {
 //             key: apikey,
-//             place_id: 
+//             photoreference: photo,
+//             maxheight: 400
+            
+//             }
 
-
-
-//         }
-
-//     })
+            
+//         })
+//         .then(function(response){
+//             var actualphoto = response;
+//             console.log(response);
+//             restaurantsOutput+= `<li class="list-group-item">${actualphoto}</li>`
+//         })
 // }
-
 
