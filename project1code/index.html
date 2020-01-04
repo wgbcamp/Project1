@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>NewYorkCity</title>        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div class="masthead">                 
+            <h1 class="display-4">Welcome to New York City</h1></div>
+            <h2><a class="weatherwidget-io" id="waetherWidget" href="https://forecast7.com/en/40d71n74d01/new-york/" data-label_1="NEW YORK" data-label_2="WEATHER" data-theme="original"></a></h2>                   
+        </div>      
+
+      <!--This for Background picture and search botton-->
+        <div id="mainBackground">
+            <img id="backImg" src="./img/2N8Zebr.jpg"  style="height: 100%; margin-top: -10px;;"   alt="Responsive image">
+            <div id="userInput" class="middlePage">
+                    <p class="lead2">Find your way?</p><br>
+                    <div class="sear-wrapp">                                     
+                        <div class="input-group mb-3" id="searchAndButton" style="right:30px; top: 30px; width: 350px;">
+                            <input type="text" id = "autocomplete" class="form-control" placeholder="New York City places" aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <div class="input-group-append">                        
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="ul-wrapp">
+                        <div class="card-body1 shadow-lg">                                    
+                            <h5 class="card-title1">Top 11 places to visit</h5>                            
+                                <ul id="list">
+                                    <li><a href="https://www.timessquarenyc.org" target="_black">Time Square</a></li>
+                                    <li><a href="https://www.nyc-arts.org/organizations/4/metropolitan-museum-of-art" target="_blank">Metropolitan Museum of Art</a></li>
+                                    <li><a href="https://www.statueoflibertytickets.com" target="_target">Ellis Island and Statue of Liberty</a></li>
+                                    <li><a href="https://www.esbnyc.com/" target="_blank">Empire State Building or Top of the Rock</a></li>
+                                    <li><a href="https://www.wtc.com/memorial" target="_blank">9/11 Memorial and Museum</a></li>
+                                    <li><a href="https://www.rockefellercenter.com" target="_blank">Rockefeller Center</a></li>
+                                    <li><a href="https://www.broadway.com" target="_blank">Broadway show</a></li>
+                                    <li><a href="https://www.centralpark.com/" target="_blank">Central Park</a></li>
+                                    <li><a href="https://www.aviewoncities.com/nyc/brooklynbridge.htm" target="_blank">Brooklyn Bridge</a></li>
+                                    <li><a href="https://hudsonriverpark.org" target="_blank">Hudson River Park</a></li>
+                                    <li><a href="https://www.thewallstreetexperience.com" target="_blank"> New York Stock Exchange</a></li>
+                                </ul>                                                
+                        </div>
+                    </div>                    
+            </div>
+        </div>
+        <div class="row">                     
+            <div class="col-lg-4">
+                <div class="card shadow-lg">   
+                    <div class="card-header" style="background-color: white;">
+                       Restorants
+                    </div>
+                    <div class="card-body">
+                        <h7 class="card-title">For more info, Please click the image</h5><br><br>
+                        <a href="https://www.yelp.com/search?find_desc=restaurants+with+a+view&find_loc=New+York%2C+NY" target="_blanck">
+                        <img src="./img/restaurants.jpg"  style="width: 200px; height: 150px; border-radius: 5px;">                            
+                    </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card shadow-lg">
+                    <div class="card-header" style="background-color: white;">
+                        Hotells
+                    </div>
+                    <div class="card-body">
+                        <h7 class="card-title">For more info, Please click the image</h7><br><br>
+                        <a href="https://www.expedia.com/Destinations-In-New-York.d234.Hotel-Destinations" target="_blanck">
+                        <img src="./img/hotel.jpg" style="width: 200px; height: 150px; border-radius: 5px;">
+                    </a>                                                  
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card shadow-lg">
+                    <div class="card-header" style="background-color: white;">
+                        Shopping
+                    </div>
+                    <div class="card-body">
+                        <h7 class="card-title">For more info, Please click the image</h7><br><br>
+                        <a href="https://www.nyhabitat.com/blog/2013/09/16/top-5-shopping-spots-new-york/" target="_blanck">
+                        <img src="./img/shopping.jpg" style="width: 200px; height: 150px; border-radius: 5px;">
+                    </a>                                                    
+                    </div>                    
+                </div>                
+            </div>                    
+        </div>
+        <div class="bottom-wrapper">       
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="text-col">
+                        <br>
+                        <h6>Contact us</h6>                    
+                        <address>                        
+                            Address: Broadway #57555, New York, NY 10012<br>
+                            Hour: Closed . Opens 11AM Sun<br>
+                            Phone: (212) 334-888899<br>
+                            Email: <a style="color:rgb(0, 162, 255);"  href="mailto:nyfyw@nyfyw.com" target="_blank">nyfyw@nyfyw.com</a><br>                        
+                        </address>                               
+                    </div>                           
+                </div>                
+                <div class="col-lg-5">
+                    <div class="text-col2">
+                        <h6>Connect with us</h6> 
+                        <br>                                          
+                        <a href="#" class="fa fa-facebook">
+                            <img src="./img/facebook.jpg" style="width: 50px; height: 40px; border-radius: 10px;"> 
+                        </a>                        
+                        <a href="#" class="fa fa-github">
+                            <img src="./img/github.jpg" style="width: 50px; height: 40px; border-radius: 10px;">                             
+                        </a>
+                        <a href="#" class="fa fa-twitter">
+                            <img src="./img/twitter.jpg" style="width: 50px; height: 40px; border-radius: 10px;"> 
+                        </a>                           
+                    </div>                             
+                    <div class="bottom">                    
+                        <footer class="footer">
+                            <p>&#169 New York, Find You Way, Icn. All rights reserved</p>
+                        </footer>
+                    </div>                       
+            </div> 
+        </div>            
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
+       <script src="main.js"></script>
+       <script src="jquery.js"></script>
+    </body>
+</html>

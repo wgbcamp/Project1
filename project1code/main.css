@@ -1,0 +1,193 @@
+
+
+* {
+    width: 0 auto;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+
+
+body {
+    /*background-image: url(./img/2N8Zebr.jpg); */
+    height: 0 auto 0 auto;
+    width: 0 auto 0 auto;
+}
+
+
+.logo {
+    position: relative;
+    color: black; 
+    right: 500px;
+    top: 40px;
+}
+
+
+#mainBackground {
+    position: relative;
+    
+}
+
+
+/*search button */
+#userInput {
+    position: absolute;
+    top: 100px;
+    
+}
+
+
+.lead2 {
+    position: relative;
+    font-size: 30px; 
+    left: 30px;
+    top: 30px;
+    font-style: italic;      
+}
+
+
+#backImg{
+    /* margin-top: 0; */
+      height: 600px;
+      width: 100%;
+  }
+
+
+.masthead {
+    text-align: center;
+    position: relative;
+    z-index: 300;
+    background: #fff;
+}
+
+
+.middlePage {
+    margin-left: 490px;
+    width: 32%
+    
+}
+
+
+/*this for the box with list inside, on the left side from the search box, */
+.card-body1 {
+    /*background-color: whitesmoke;*/
+    background-color: rgba(15, 150, 204, 0.55);
+    border-radius: 5px;
+    position: relative;    
+    padding: 10px;
+    width: 95%;
+    right: 470px;      
+    bottom: 140px;
+    display: block;    
+}
+
+
+/*this for the title of the inside the box on the left side from the search box*/
+.card-title1  {
+   /* color: rgba(230, 117, 51, 0.904); */
+    color: rgba(179, 49, 10, 0.904);
+}
+
+
+/*
+/*this for the color of the list paragrph
+ul a {
+    /*color: rgba(15, 83, 110, 0.904);
+    color: rgba(8, 26, 131, 0.904);
+    position: relative;
+    
+}
+*/
+
+
+/*this for the 3 boxes in the bottom wiht pitures inside*/
+.row {
+    /*background-color: rgb(47, 121, 150); */
+    background-color: rgba(15, 83, 110, 0.904);
+    position: relative; 
+    text-align: center;      
+    margin-right: -0px;
+    padding: 30px;  
+}
+
+
+/*this is for the 3 boxes background color and with picture inside*/
+.card-body {
+    /*background-color: rgb(47, 121, 150);*/
+    background-color: rgba(15, 83, 110, 0.904);
+    width: 100%;
+
+}
+ 
+/*this for the address and social media in the bottom*/
+.col-lg-5 {
+    position: relative;
+    color: white;
+    font-size: smaller;
+    bottom: 20px;
+    left: -160px;
+
+}
+
+
+/* this for the social media text*/
+.text-col2 {
+    position: relative;
+    font-size: x-small;
+    left: -150px;
+    top: 30px;
+    
+}
+
+
+.bottom-wrapper {
+    position: relative;
+    background-color: brown;
+    overflow: hidden;
+    height: 150px;
+}
+
+
+.footer {    
+    color: white;
+    position: relative;
+    font-size: small;
+    top: -10px;
+    right: -300px;
+}
+
+
+
+@media only screen and (min-width: 1700px) {
+    .card-body1{
+        position: relative;    
+        padding: 10px;
+        width: 95%;
+        right: 470px;      
+        bottom: 140px;
+        display: block; 
+    }
+    .ul-wrapp {
+        width: 95%;
+        margin: 0 auto;
+        height: 0 auto;
+    }
+    
+   .lead2 {
+    margin: 0 auto;
+    bottom: 0 auto;
+    top: 0 auto;    
+   }     
+
+}
+
+@media only screen and (min-width: 816px) {
+    
+   .lead2 {
+    margin: 0 auto;
+    bottom: 0 auto;
+    top: 0 auto; 
+    width: 100% auto;   
+   }     
+
+}
