@@ -1,5 +1,4 @@
 
-
 * {
     width: 0 auto;
     margin: 0 auto;
@@ -67,30 +66,40 @@ body {
     
 }
 
+h4 {
+    color: rgba(230, 33, 33, 0.61);;
+    position: relative;
+    font-style: italic;
+    bottom: 80px;
+    left: 30px;
+}
+
 
 /*this for the box with list inside, on the left side from the search box, */
 .card-body1 {
-    /*background-color: whitesmoke;*/
     background-color: rgba(15, 150, 204, 0.55);
     border-radius: 5px;
     position: relative;    
     padding: 10px;
     width: 95%;
     right: 470px;      
-    bottom: 140px;
+    bottom: 170px;
     display: block;    
 }
 
 
 /*this for the title of the inside the box on the left side from the search box*/
 .card-title1  {
-   /* color: rgba(230, 117, 51, 0.904); */
+    position: relative;
     color: rgba(179, 49, 10, 0.904);
+    top: 3px;
+
 }
 
 
+
 /*
-/*this for the color of the list paragrph
+/*this for the color of the list paragrph/links.. this not use it, because using jquery instead
 ul a {
     /*color: rgba(15, 83, 110, 0.904);
     color: rgba(8, 26, 131, 0.904);
@@ -113,7 +122,6 @@ ul a {
 
 /*this is for the 3 boxes background color and with picture inside*/
 .card-body {
-    /*background-color: rgb(47, 121, 150);*/
     background-color: rgba(15, 83, 110, 0.904);
     width: 100%;
 
@@ -145,6 +153,7 @@ ul a {
     background-color: brown;
     overflow: hidden;
     height: 150px;
+    
 }
 
 
