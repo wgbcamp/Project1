@@ -1,26 +1,19 @@
-// var url = "https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/weather?q=Atlanta&APPID=32e8183a7007303bba605abc3fd9efbe";
-
-// getWeather()
-
-// function getWeather() {
-//     $.ajax({
-//         type: "GET",
-//         url: url,
-    
-//     }).then(function (res) { console.log(res);
-//      });
-// }
-
-
-
 var longitudeValue;
 var latitudeValue;
 var placeSentToGeocode;
-var apikey = "YOUR API KEY";
+var apikey = "YOUR_API_KEY";
 var restaurants;
 var place_idVariable;
-var restaurantsOutput = '<ul class="list-group">';
+var restaurantsOutput = '<ul style="list-style-type:none;">';
 var photo;
+var photoLoopCounter=0;
+var boxCounter = 1;
+
+
+
+var dayNumber = new Date();
+var dayOutput = dayNumber.getDay();
+
 
 //**autocomplete function starts after user types text into input field**
 google.maps.event.addDomListener(window, 'load', initialize);
@@ -150,9 +143,9 @@ console.log("Map and marker displayed.")
 
 //**restaurantFinder finds the place ID of restaurants within 1 mile of user's coordinates**  
 function restaurantFinder(){
-    //refresh the restaurantPoints div in html file
+    //refresh the restaurantPoints div in html file .....commented!
     restaurantsOutput = "";
-    document.getElementById('restaurantPoints').innerHTML = restaurantsOutput; 
+    // document.getElementById('restaurantPoints').innerHTML = restaurantsOutput;  commented!
     console.log("restaurantFinder function called...")
 
     var stringifiedPosition = String(latitudeValue) + "," + String(longitudeValue);
@@ -177,7 +170,7 @@ function restaurantFinder(){
        
         
 
-        for (i=0; i < 12; i++){
+        for (i=0; i < 10; i++){
            
            place_idVariable = response.results[i].place_id;
            
@@ -211,36 +204,38 @@ function restaurantData(){
         .then(function(response){
             console.log(response);
             restaurants = response.result.name;
-            photo = response.result.photos[0].photo_reference;
-            restaurantsOutput+= 
-                `<li class="list-group-item">${restaurants}</li>`;
-
+            photo = response.result.photos[photoLoopCounter].photo_reference; 
+                
                 document.getElementById('restaurantTitle').innerHTML = "Restaurants";
-                document.getElementById('restaurantPoints').innerHTML = restaurantsOutput; 
-                // restaurantPhoto();
+                document.getElementById('shoppingTitle').innerHTML = "Shopping";
+//^^^^^ placeholder
+
+                document.getElementById('restName' + boxCounter).innerHTML = response.result.name;
+                document.getElementById('restAddress' + boxCounter).innerHTML = response.result.formatted_address;
+                document.getElementById('restPhoneNumber' + boxCounter).innerHTML = response.result.formatted_phone_number;
+                document.getElementById('restHours' + boxCounter).innerHTML = response.result.opening_hours.weekday_text[dayOutput];
+                
+                
+                //loading page elements
+                document.getElementById('hiddencolumns').style.visibility = "visible";
+                
+                photoLoopCounter++;
+                if(photoLoopCounter== 10){
+                    photoLoopCounter -= 10;
+                }
+                boxCounter++;
+                if(boxCounter == 10){
+                    boxCounter -= 9;
+                }
+                restaurantPhoto();
         })
 }
 
-// function restaurantPhoto(){
-
-//     console.log("restaurantPhoto funcation called...")
-
-    
-//         $.ajax({
-//             url: 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/photo?',
-//             data: {
-//             key: apikey,
-//             photoreference: photo,
-//             maxheight: 400
-            
-//             }
-
-            
-//         })
-//         .then(function(response){
-//             var actualphoto = response;
-//             console.log(response);
-//             restaurantsOutput+= `<li class="list-group-item">${actualphoto}</li>`
-//         })
-// }
+function restaurantPhoto(){
+    console.log("restaurantPhoto funcation called...")
+    var storethis = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&maxheight=400&photoreference=' + photo + '&key=' + apikey;
+    $("#thePhoto" + photoLoopCounter).attr("src",storethis);
+    console.log("photolooper is " + photoLoopCounter);
+    console.log("boxcounter is " + boxCounter);
+}
 
