@@ -1,4 +1,5 @@
 
+
 * {
     width: 0 auto;
     margin: 0 auto;
@@ -9,16 +10,8 @@
 
 body {
     /*background-image: url(./img/2N8Zebr.jpg); */
-    height: 0 auto 0 auto;
+    height: 100%;
     width: 0 auto 0 auto;
-}
-
-
-.logo {
-    position: relative;
-    color: black; 
-    right: 500px;
-    top: 40px;
 }
 
 
@@ -46,10 +39,10 @@ body {
 
 
 #backImg{
-    /* margin-top: 0; */
-      height: 600px;
-      width: 100%;
-  }
+    /*margin-top: 0; */
+    height: 600px;
+    width: 100%;
+}
 
 
 .masthead {
@@ -66,6 +59,7 @@ body {
     
 }
 
+
 h4 {
     color: rgba(230, 33, 33, 0.61);;
     position: relative;
@@ -75,7 +69,7 @@ h4 {
 }
 
 
-/*this for the box with list inside, on the left side from the search box, */
+/*this is for the box with list inside, on the left side from the search box, */
 .card-body1 {
     background-color: rgba(15, 150, 204, 0.55);
     border-radius: 5px;
@@ -88,14 +82,13 @@ h4 {
 }
 
 
-/*this for the title of the inside the box on the left side from the search box*/
+/*this is for the title of the inside the box on the left side from the search box*/
 .card-title1  {
     position: relative;
     color: rgba(179, 49, 10, 0.904);
     top: 3px;
 
 }
-
 
 
 /*
@@ -109,7 +102,7 @@ ul a {
 */
 
 
-/*this for the 3 boxes in the bottom wiht pitures inside*/
+/*this is for the 3 boxes in the bottom wiht pitures inside*/
 .row {
     /*background-color: rgb(47, 121, 150); */
     background-color: rgba(15, 83, 110, 0.904);
@@ -126,44 +119,79 @@ ul a {
     width: 100%;
 
 }
- 
-/*this for the address and social media in the bottom*/
-.col-lg-5 {
-    position: relative;
-    color: white;
-    font-size: smaller;
-    bottom: 20px;
-    left: -160px;
 
-}
-
-
-/* this for the social media text*/
-.text-col2 {
-    position: relative;
-    font-size: x-small;
-    left: -150px;
-    top: 30px;
-    
-}
 
 
 .bottom-wrapper {
     position: relative;
     background-color: brown;
     overflow: hidden;
-    height: 150px;
+    height: 220px;
     
 }
 
 
-.footer {    
-    color: white;
+.columns {    
+    background-color:rgba(15, 83, 110, 0.904); 
+    grid-template-columns: repeat(4, auto);
     position: relative;
-    font-size: small;
+    display: grid; 
+    width: 100%;
+    height: 220px;    
     top: -10px;
-    right: -300px;
+    font-size: 20px;    
+    gap: 20px;
+    margin: 10px;
+    color: white;
+    left: -10px;
+    
 }
+
+
+.column1 {
+    position: relative;
+    font-size: 13px;
+    width: 200px;
+    top: 20px;
+    right: 30px;
+}
+
+
+.column2 {
+    position: relative;
+    top: 20px;
+    left: 55px;
+}
+
+
+.column4 {
+    position: relative;
+    font-size: 13px;
+    width: 200px;
+    left: 170px;
+    top: 20px;
+}
+
+
+
+.controlis-expanded {
+    position: relative;
+    left: 50px;
+}
+
+
+footer {
+    /*background-color: rgb(0, 111, 139); */
+    background-color: rgba(10, 79, 99, 0.801);
+    position: relative;
+    text-align: center;
+    color: white;
+    width: 100%;    
+    left: -0px;
+    font-size: x-small;
+    overflow: hidden;
+}
+
 
 
 
@@ -200,3 +228,5 @@ ul a {
    }     
 
 }
+
+
