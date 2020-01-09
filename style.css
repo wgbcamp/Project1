@@ -1,0 +1,98 @@
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+}
+
+#background{
+    height:100%;
+    background-image: url("assets/images/2N8Zebr.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+
+#map{
+    height: 600px;
+    border-radius: 20px 20px 20px 20px;
+    padding: solid transparent;
+}
+
+#hiddencolumns{
+    visibility: hidden;
+}
+
+#restaurantColumn{
+    max-height: 769px;
+    overflow: auto;
+}
+
+#shoppingColumn{
+    max-height: 769px;
+    overflow: auto;
+}
+
+img{ 
+    border-radius: 10px;
+
+}
+
+.boldThis{
+    font-weight: 750;
+}
+#restaurantPoints{
+ 
+    padding: solid transparent;
+}
+
+#shoppingPoints{
+    border-radius: 0px 20px 20px 0px;
+
+}
+
+#mapTitle{ 
+    margin-bottom: auto;
+ 
+}
+
+#restaurantTitle{ 
+    margin-top: auto; 
+ 
+}
+
+#bottomFooter{
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    background-color: #3B7282;
+}
+
+#middleFooter{
+    color: white;
+    background-color: #1E4F68;
+}
+
+#smallFooterTextTitle{
+    text-align: left;
+    font-weight: 700;
+}
+
+#smallFooterText{
+    font-weight: 400;
+    font-size: 13px;
+}
+
+#email{
+    color: #0A1B7F;
+}
+
+
+@media only screen and (max-width: 768px) {
+    #userInput {
+      width:100%;
+    }
+  }
+
