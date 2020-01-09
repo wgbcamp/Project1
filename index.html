@@ -1,40 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>NewYorkCity</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
-
-</head>
-<body>
-    <div class="masthead"><h1 class="display-4">Welcome to New York City</h1></div>
-
-    <h2><a class="weatherwidget-io" id="waetherWidget" href="https://forecast7.com/en/40d71n74d01/new-york/" data-label_1="NEW YORK" data-label_2="WEATHER" data-theme="original" >NEW YORK WEATHER</a>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Find Your Way</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+  <div class="columns">
+      <div class="title column is-full has-background-white has-text-centered is-size-1">
+          New York, Find Your Way
+      </div>
+    </div>
+      <h2><a class="weatherwidget-io" id="waetherWidget" href="https://forecast7.com/en/40d71n74d01/new-york/" data-label_1="NEW YORK" data-label_2="WEATHER" data-theme="original" >NEW YORK WEATHER</a>
         <script>
         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
         </script></h2>
 
 
-<div id="mainBackground">  
-    <img id="backImg" src="./assets/images/2N8Zebr.jpg"  alt="Responsive image">
+    <div id="background">
+        <div class="columns">
+            <div class="title column has-text-centered">Find Your Way</div>
+        </div>
+        <div class="columns">
+            <input class="column is-4 is-offset-4" id="userInput" type="text" placeholder="Enter a location"></input>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="columns">
+        <!-- <div class="title column is-4" id="mapTitle"></div> -->
+        <!-- <div class="title column is-4" id="restaurantTitle"></div> -->
+        </div>
+        <div class="columns" id="hiddencolumns">
+            <div class="column is-4 has-background-white">
+                <div class="title" id="mapTitle"></div>
+                <br>
+                <div id="map"></div>
+            </div>
+            <div class="column is-4 has-background-white" id="restaurantColumn">
+                <div class="title" id="restaurantTitle"></div>
+                <br>
+                <div id="restaurantPoints">
 
-    <div id="userInput" class="middlePage">
-            <p class="lead2">Find your way?</p>
-            <hr class="my-4">
-            <div class="input-group mb-3" id="searchAndButton">
-                <input type="text" id = "autocomplete" class="form-control" placeholder="New York City places" aria-label="Recipient's username" aria-describedby="button-addon2">
-                <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+
+                    
+                    
+                    
+            </div>
+            
+        </div>
+        <div class="column is-4 has-background-white" id="shoppingColumn">
+            <div class="title" id="lodgingTitle"></div>
+            <div id="lodgingPoints">
+        </div>
+    </div>
+    
+    </div>
+    <div id="footer">
+        <div id="middleFooter">
+            <div class="columns">
+            <div class="column is-3 has-text-left is-offset-1" id="smallFooterTextTitle">Contact us
+            <br>
+            <div id="smallFooterText">Address: Broadway #5755, New
+            <br>
+                York, NY 10012
+                <br>
+                Hour: Closed . Opens 11AM Sun
+                <br>
+                Phone: (212) 334-88889
+                <br>
+                <div id="email">
+                    Email: nyfyw@nyfyw.com
                 </div>
+                <br>
+                <br>
+                <br>
                 
             </div>
-          </div>
-      </div>
+            
+            </div>
+            <div class="column is-3 has-text-center is-offset-1" id="smallFooterTextTitle">Connect with us
+                <br>
+                <div id="smallFooterText">
+                <br>
+                
+                    <img src="assets/images/facebook.jpg" style="width: 50px; height: 40px; border-radius: 10px;"> 
+                                     
+               
+                    <img src="assets/images/twitter.jpg" style="width: 50px; height: 40px; border-radius: 10px;">                             
+               
+                
+                    <img src="assets/images/github.jpg" style="width: 50px; height: 40px; border-radius: 10px;"> 
+                
+                </div>
+
+                </div>
+                <div class="column is-2 has-text-left is-offset-1" id="smallFooterTextTitle">About us
+                    <br>
+                    <div id="smallFooterText">New York , Find Your Way is a search resource with links to the top locations to visit and makes it easier for tourist/visitors to New York to see the best experience that New York has to offer.
+                        
+                    </div>
+                    
+                    </div>
+        </div>
+        </div>
+        <div id="bottomFooter">© New York, Find You Way, Inc. All rights reserved</div>
     </div>
 
-</body>
+
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="assets/javascript/script.js"></script>
+
+        
+    
+  
+  </body>
 </html>
