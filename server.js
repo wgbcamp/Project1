@@ -19,6 +19,10 @@ app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/getKey', (req, res) =>{
+    res.send(process.env.API_KEY)
+});
+
 app.listen(PORT, () =>
     console.log(`Starting server at port ${PORT}`)
 );
