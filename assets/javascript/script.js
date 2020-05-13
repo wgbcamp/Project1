@@ -1,7 +1,7 @@
 var longitudeValue;
 var latitudeValue;
 var placeSentToGeocode;
-var apikey = "YOUR_API_KEY";
+var apikey = "AIzaSyBKJBbZHJd1DBTHNE0xbibPIu8RGz-QSxU";
 var place_idVariable;
 var photo;
 var savedAppendRestaurants;
