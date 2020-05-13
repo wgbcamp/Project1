@@ -1,69 +1,98 @@
-
-
-#mainBackground {
-    position: relative;
-    background-image: url('../images/2N8Zebr.jpg');
-    height: 100vh;
-    width: 100vw;
-    
+html{
+    height: 100%;
 }
 
-#userInput {
-  
+body{
+    height: 100%;
 }
 
-
-
-.lead2 {
-     font-size: 30px; 
-    text-align: center;
-    font-style: italic;
-      
-}
-
-.lead3 {
-    font-size: 20px;
-    text-align: center
-
-
-}
-
-#backImg{
-    /* margin-top: 0; */
-      height: 600px;
-      width: 100%;
-  }
-
-
-.masthead {
-    text-align: center;
-    position: relative;
-    z-index: 300;
-    background: #fff;
-}
-
-.row{
-    height: 200px;
+#background{
+    height:100%;
+    background-image: url("../images/2N8Zebr.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
 }
 
 #map{
-    
-    height:600px;
-    
-    border-radius: 5px;
+    height: 600px;
+    border-radius: 20px 20px 20px 20px;
+    padding: solid transparent;
+}
+
+#hiddencolumns{
+    visibility: hidden;
+}
+
+#restaurantColumn{
+    max-height: 769px;
+    overflow: auto;
+}
+
+#shoppingColumn{
+    max-height: 769px;
+    overflow: auto;
+}
+
+img{ 
+    border-radius: 10px;
+
+}
+
+.boldThis{
+    font-weight: 750;
+}
+#restaurantPoints{
+ 
+    padding: solid transparent;
+}
+
+#shoppingPoints{
+    border-radius: 0px 20px 20px 0px;
+
+}
+
+#mapTitle{ 
+    margin-bottom: auto;
+ 
+}
+
+#restaurantTitle{ 
+    margin-top: auto; 
+ 
+}
+
+#bottomFooter{
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    background-color: #3B7282;
+}
+
+#middleFooter{
+    color: white;
+    background-color: #1E4F68;
+}
+
+#smallFooterTextTitle{
+    text-align: left;
+    font-weight: 700;
+}
+
+#smallFooterText{
+    font-weight: 400;
+    font-size: 13px;
+}
+
+#email{
+    color: #0A1B7F;
 }
 
 
-#waetherWidget{
-  
-}
-
-input {
-    height: 30px;
-    padding-left: 10px;
-    border-radius: 4px;
-    border: 1px solid rgb(186, 178, 178);
-    box-shadow: 0px 0px 12px #EFEFEF;
+@media only screen and (max-width: 768px) {
+    #userInput {
+      width:100%;
+    }
   }
 
-  
