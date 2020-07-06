@@ -36,6 +36,8 @@ Migrate to localhost:3001 in browser.
 ### Technologies
 
 * Javascript
+* jQuery
+* AJAX
 * HTML
 * CSS
 * Bulma CSS Framework
